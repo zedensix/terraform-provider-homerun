@@ -33,6 +33,10 @@ resource "homerun_remote_host" "example" {
   Write-only: the API never returns it, so Terraform can't detect a change made
   outside it.
 - `agent_url` (String) The agent's base URL, like `http://10.0.0.5:7420`.
+- `build_cpu_limit` (String) The CPU cores every build on it shares, like 1.5, 0
+  for no limit. Unset follows the instance's build_cpu_limit.
+- `build_memory_limit_mb` (Number) The memory in MB every build on it shares, 0
+  for no limit. Unset follows the instance's build_memory_limit_mb.
 - `docker_host` (String) tcp://host:2376 or ssh://user@host.
 - `kind` (String) docker (a Docker daemon at docker_host) or agent (a Homerun
   Agent at agent_url). Changing it replaces the resource. Defaults to

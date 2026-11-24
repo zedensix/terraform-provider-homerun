@@ -37,6 +37,10 @@ resource "homerun_instance_settings" "example" {
   slug. A bare hostname.
 - `build_concurrency` (Number) How many builds each build server runs at once
   unless it sets its own limit, 0 for no limit.
+- `build_cpu_limit` (String) The CPU cores every build on a remote build server
+  shares unless the server sets its own, like 1.5. Unset for no limit.
+- `build_memory_limit_mb` (Number) The memory in MB every build on a remote
+  build server shares unless the server sets its own, 0 for no limit.
 - `build_on_host` (Boolean) Whether git builds may run on this host while build
   servers are registered.
 - `cpu_hard_threshold` (Number) A usage percentage that alerts, 1 to 100.
@@ -52,6 +56,10 @@ resource "homerun_instance_settings" "example" {
 - `docker_socket_path` (String)
 - `gpu_hard_threshold` (Number) A usage percentage that alerts, 1 to 100.
 - `gpu_soft_threshold` (Number) A usage percentage that alerts, 1 to 100.
+- `host_build_cpu_limit` (String) The CPU cores every build on this host shares,
+  like 1.5. Unset for no limit.
+- `host_build_memory_limit_mb` (Number) The memory in MB every build on this
+  host shares, 0 for no limit.
 - `image_scan_block_fixable_only` (Boolean)
 - `image_scan_block_severity` (String) CRITICAL, HIGH, MEDIUM or LOW: refuse to
   deploy an image with a finding this severe or worse.

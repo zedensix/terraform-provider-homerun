@@ -57,6 +57,8 @@ data "homerun_service" "example" {
 - `category` (String)
 - `channel_branch` (String)
 - `channel_canary_domain` (String)
+- `channel_env_overrides` (Map of String, Sensitive)
+- `channel_inherit_env` (Boolean)
 - `channel_tag_pattern` (String)
 - `channels_enabled` (Boolean) Release channels: a canary built from
   channel_branch.
@@ -133,7 +135,7 @@ data "homerun_service" "example" {
 - `preview_copy_volumes` (Boolean)
 - `preview_default_domain` (Boolean)
 - `preview_domain_template` (String)
-- `preview_env_overrides` (Map of String)
+- `preview_env_overrides` (Map of String, Sensitive)
 - `preview_inherit_env` (Boolean)
 - `preview_report_github` (Boolean)
 - `preview_uptime_enabled` (Boolean) Probe each pull request preview's uptime.
